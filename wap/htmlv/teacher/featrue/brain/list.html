@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>头脑风暴</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/tools/layer.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content">
+        <input type="button" name="name" value="发起头脑风暴" data-role="none" class="btn btnDefault js_sub">
+        <div class="listLoad">
+        </div>
+            <ul class="listNormal">
+            </ul>
+    </div>
+</div>
+<script>
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.sz_head').outerHeight()-70;
+    $('.discussMsg').css('height',h1)
+});
+</script>
+<script src="/wap/htmlc/teacher/featrue/brain/list.js"></script>
+</body>
+</html>

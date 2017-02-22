@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>批改作业</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--未完成、待批改、已批改---开始-->
+		<div data-role="navbar" class="ui-navbar sz_marbot" role="navigation">
+		  <ul class="ui-grid-a sz_zhuti">
+			<li><a class="ui-btn-active" href="#" data-role="button" onClick="ChangeDiv('0','Div_',3)" >已批改</a></li>
+			<li><a href="#" data-role="button" onClick="ChangeDiv('1','Div_',3)" >未批改</a></li>
+			<li><a href="#" data-role="button" onClick="ChangeDiv('2','Div_',3)" >未提交</a></li>
+		  </ul>
+		</div>
+		<template v-if = 'loading'>
+		<div data-role="content" class="sz_star">
+				<div id="Div_0">
+					<div class="ui-grid-solo sz_zuoye">已批改学生：{{students.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow" @click='jump($index,1)'  v-for = "student in students">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{student.realname}}<font class="sz_time">得分：{{student.points}}</font></h6>
+									<ul class="sz_ke_ul">
+										<li class="sz_liu">学号：{{student.stdnumber}}</li>
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+					<nomsg msg='暂无已批改作业' v-if='students.length ===0'></nomsg>
+				</div>
+				<div id="Div_1" style="display:none;">
+					<div class="ui-grid-solo sz_zuoye">未批改学生：{{studentFns.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow"  @click='jump($index,2)'  v-for = "studentfn in studentFns">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{studentfn.realname}}<font class="sz_time">得分：{{studentfn.points}}</font></h6>
+									<ul class="sz_ke_ul">
+										<li class="sz_liu">学号：{{studentfn.stdnumber}}</li>
+										
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+				<nomsg msg='暂无未批改学生' v-if='studentFns.length ===0'></nomsg>		
+			</div>
+			<div id="Div_2" style="display:none">
+				<div class="ui-grid-solo sz_zuoye">未提交学生：{{studentPulnos.length}}</div>
+				<div class="ui-grid-solo sz_bg ui-shadow"  v-for = "studentpulno in studentPulnos">
+					<div class="sz_jiang">
+						<div class="sz_right">
+							<div class="sz_xiang">
+								<h6>{{studentpulno.realname}}<font class="sz_time">得分：{{studentpulno.points}}</font></h6>
+								<ul class="sz_ke_ul">
+									<li class="sz_liu">学号：{{studentpulno.stdnumber}}</li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+					</div>
+				</div>
+			<nomsg msg='暂无未提交学生' v-if='studentPulnos.length ===0'></nomsg>
+			</div>
+			</template>
+			<load v-else></load>
+		</div>
+		
+	</div>
+
+	<script src="/wap/htmlc/teacher/home/studentlist.js"></script>
+<!--统计开始-->
+<!--在线时长-->
+<script>
+	var learningtimeinterval = 1;//设置为1分钟
+</script>
+<script src="/wap/htmlc/tongji/learningtimer.js"></script>
+<!--点击量-->
+<script language="javascript">
+	var tongji_hits_type = 14;//没有tongji_hits_productidid都是14
+	var tongji_hits_productid = 1;
+</script>
+<script src="/wap/htmlc/tongji/hits.js"></script>
+<!--停留时间-->
+<script language="javascript">
+	var tongji_visits_type = 14;
+	var tongji_visits_productid = 1;
+	var tongji_visits_interval = 0.5;//设置为30秒
+</script>
+<script language="javascript" src="/wap/htmlc/tongji/visits.js"></script>
+<!--统计结束-->
+</div>
+
+</body>
+</html>

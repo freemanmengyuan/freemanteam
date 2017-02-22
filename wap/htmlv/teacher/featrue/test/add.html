@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>增加试题</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--我要评论-开始-->
+
+		<div data-role="content" class="sz_star_b">
+			<div class="ui-grid-solo sz_bg ui-shadow sz_martop" >
+        <select class="select" name="" v-model="type" data-role="none">
+          <option value ="1">单选题</option>
+          <option value ="2">多选题</option>
+          <option value="0">判断题</option>
+        </select>
+				<!--内容-->
+        <a href="javascript:;" class="optionadd" v-on:click="optionadd">+</a>
+        <a href="javascript:;" class="optionadd" v-on:click="optioncut">-</a>
+						<div class="sz_bord"><input type="text" name="name" value="" v-model="msg"></div>
+						<div class="sz_abcd">
+							<ul class="testoption">
+								<template v-if="type=='1'">
+									<li v-for="xuan in testmain.options" class="clear" track-by="$index">
+				            <input type="radio" class="option-input radio" name="test" data-role="none" :value="$index | numChange" v-model="answer" :id="'test'+$index">
+											{{$index | numChange}}.<input type="text" name="name" value="" data-role="none">
+									</li>
+								</template>
+								<template v-if="type=='2'">
+									<li v-for="xuans in testmain.options" class="clear" track-by="$index">
+											<input type="checkbox" class="option-input radio"  data-role="none" name="test" :value="$index | numChange" v-model="answercheck" :id="'test'+$index">
+											<label class="optmain" :for="'test'+$index">
+												{{$index | numChange}}.<input type="text" name="name" value="" data-role="none">
+											</label>
+										</li>
+								</template>
+                <template v-if="type=='0'">
+                  <li class="clear">
+                    <input type="radio" class="option-input radio" name="test" value="A" v-model="answer">A. 正确
+                  </li>
+                  <li class="clear">
+                    <input type="radio" class="option-input radio" name="test" value="B" v-model="answer">B. 错误
+                  </li>
+									{{answer}}
+                </template>
+							</ul>
+						</div>
+			</div>
+
+			<div class="sz_zishu sz_martop"> <span class="testType">{{testmain.type | testType}}</span></div>
+			<resubmit :msg.sync="btnmsg" :btnclass="{testsub:true,disabled:btnmsg!=='提交'}" data-role="none" :retrue="retrue" @click="testsub" ></resubmit>
+		</div>
+	</div>
+</div>
+<script src="/wap/htmlc/teacher/featrue/test/add.js"></script>
+</body>
+</html>

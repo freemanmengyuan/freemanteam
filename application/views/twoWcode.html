@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>二维码签到</title>
+	<script type="text/javascript" src="/js_twoWcode/jquery-1.8.3.js"></script>
+	<script  type="text/javascript" src="/js_twoWcode/jquery.qrcode.min.js"></script>
+	<style type='text/css'>
+		#code{
+			width:550px;
+			margin:50px auto;
+		}
+		#title_t{
+			width:500px;
+			margin:0 auto;
+			margin-top:150px;
+		}	
+		#title_t h1{
+			color:blue;
+		}
+	</style>
+</head>
+<body>
+<div id='title_t'><h1>扫描二维码签到</h1></div>
+<div id="code"></div> 
+<script>
+ $('#code').qrcode("http://hdketang.ejianwei.com.cn/index.php/student_sign/index?<?php echo $string?>");
+</script>
+</body>
+</html>

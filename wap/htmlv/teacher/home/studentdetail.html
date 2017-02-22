@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>批改作业</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/tools/laytpl.js"></script>
+<script src="/wap/js/config.js"></script>
+</head>
+<body>
+<script id="workFinish" type="text/html">
+	{{# for(var i = 0, len = d.data.length; i < len; i++){ }}
+	<div class="ui-grid-solo sz_bg ui-shadow sz_martop" >
+		<!--内容-->
+		<div class="sz_bord">{{i+1}}.{{d.data[i].content}}</div>
+		<div class="sz_abcd">
+			{{# for(var j = 0, len1 = d.data[i].options.length; j < len1; j++){ }}
+				{{# if(d.data[i].myanswer.indexOf(d.data[i].options[j].code)=="-1"){
+				d.data.class=""
+			}else{
+				d.data.class="sz_color_a"
+			}
+			}}
+			<span class="{{d.data.class}}">{{# if(d.data[i].type!=2){d.data[i].options[j].code=d.data[i].options[j].code+":"}else{ d.data[i].options[j].code=""}}}{{d.data[i].options[j].code}}{{d.data[i].options[j].content}}</span><br>
+			{{# } }}
+		</div>
+	</div>
+		{{# if(d.data[i].type==0){
+				d.data[i].type="单选题"
+			}else if(d.data[i].type==1){
+				d.data[i].type="多选题"
+			}else if(d.data[i].type==2){
+				d.data[i].type="判断题"
+			}
+	}}
+	<div class="sz_zishu sz_martop">
+		<div class="pd5">
+			<font class="sz_color_a">{{i+1}}</font>/<span class="sum">{{len}}</span> &nbsp;&nbsp; &nbsp;&nbsp; <span class="testType">{{d.data[i].type}}：<font class="sz_color_a">{{d.data[i].stempoint}}</font></span>分
+		</div>
+	<div class="myanswer">
+		{{# if(d.data[i].myanswer==1){
+			d.data[i].myanswer="A"
+		}else if(d.data[i].myanswer==2){
+			d.data[i].myanswer="B"
+		}
+		}}
+		{{# if(d.data[i].answer==1){
+		d.data[i].answer="A"
+		}else if(d.data[i].answer==2){
+		d.data[i].answer="B"
+		}
+		}}
+		{{# if(d.data[i].mypoints=="0"){
+		d.data.class1="sz_color_c"
+		}else{
+		d.data.class1=""
+		}
+		}}
+		学生的答案：<font class="{{d.data.class1}}">{{d.data[i].myanswer}}</font><br>
+		<span class="sz_color_a">正确答案：{{d.data[i].answer}}		得分：<font class="{{d.data.class1}}">{{d.data[i].mypoints}}</font>分</span>
+		<br>
+		试题解析：{{d.data[i].explains.explain}}
+	</div>
+
+	</div>
+	{{# } }}
+</script>
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content" style="padding-bottom:50px;">
+		
+	</div>
+	<!--老师评论-开始-->
+	<div class="discussBtn discussbottom">
+    <textarea name="remark" id="remark" data-role="none" placeholder="请阅卷教师写下对该学生的意见，或者题型向导……"></textarea>
+    <input type="button" value="发送" data-role="none" id="submit" style="font-size:14px;">
+  	</div>
+</div>
+<script src="/wap/htmlc/teacher/home/studentdetail.js"></script>
+<!--统计开始-->
+<!--在线时长-->
+<script>
+	var learningtimeinterval = 1;//设置为1分钟
+</script>
+<script src="/wap/htmlc/tongji/learningtimer.js"></script>
+<!--点击量-->
+<script language="javascript">
+	var tongji_hits_type = 14;//没有tongji_hits_productidid都是14
+	var tongji_hits_productid = 1;
+</script>
+<script src="/wap/htmlc/tongji/hits.js"></script>
+<!--停留时间-->
+<script language="javascript">
+	var tongji_visits_type = 14;
+	var tongji_visits_productid = 1;
+	var tongji_visits_interval = 0.5;//设置为30秒
+</script>
+<script language="javascript" src="/wap/htmlc/tongji/visits.js"></script>
+<!--统计结束-->
+</body>
+</html>

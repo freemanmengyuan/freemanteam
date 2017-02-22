@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>批改考试</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--未完成、待批改、已批改---开始-->
+		<div data-role="navbar" class="ui-navbar sz_marbot" role="navigation">
+		  <ul class="ui-grid-a sz_zhuti">
+			<li><a class="ui-btn-active" href="#" data-role="button" onClick="ChangeDiv('0','Div_',3)" >未批改</a></li>
+			<li><a href="#" data-role="button" onClick="ChangeDiv('1','Div_',3)" >已批改</a></li>
+			<li><a href="#" data-role="button" onClick="ChangeDiv('2','Div_',3)" >未发布</a></li>
+		  </ul>
+		</div>
+		<template v-if = 'loading'>
+		<div data-role="content" class="sz_star">
+				<div id="Div_0">
+					<div class="ui-grid-solo sz_zuoye">未批改考试：{{exams.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow" @click='jump($index,1)' @click='jump($index,0)' v-for = "exam in exams">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{exam.title}}<font class="sz_time">共{{exam.examcount}}题</font></h6>
+									<ul class="sz_ke_ul">
+										<li class="sz_liu"><img src="/wap/tools/jquerymobile/img/sz_star.png" /><font class="sz_color_a">{{exam.begintime}}</font></li>
+										<li class="sz_si"><img src="/wap/tools/jquerymobile/img/sz_end.png" /><font class="sz_color_b">{{exam.endtime}}</font></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+					<nomsg msg='暂无待完成考试' v-if='exams.length ===0'></nomsg>
+				</div>
+				<div id="Div_1" style="display:none;">
+					<div class="ui-grid-solo sz_zuoye">已批改考试：{{examFns.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow"  @click='jump($index,2)'  v-for = "examfn in examFns">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{examfn.title}}<font class="sz_time">共{{examfn.examcount}}题</font></h6>									
+									<ul class="sz_ke_ul">
+										<li class="sz_liu"><img src="/wap/tools/jquerymobile/img/sz_star.png" /><font class="sz_color_a">{{examfn.begintime}}</font></li>
+										<li class="sz_si"><img src="/wap/tools/jquerymobile/img/sz_end.png" /><font class="sz_color_b">{{examfn.endtime}}</font></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+				<nomsg msg='暂无待完成考试' v-if='examFns.length ===0'></nomsg>
+			<!--已批改---结束-->
+			</div>
+			<div id="Div_2" style="display:none">
+				<div class="ui-grid-solo sz_zuoye">未发布考试：{{examPulnos.length}}</div>
+				<div class="ui-grid-solo sz_bg ui-shadow"  @click='jump($index,3)'  v-for = "exampulno in examPulnos">
+					<div class="sz_jiang">
+						<div class="sz_right">
+							<div class="sz_xiang">
+								<h6>{{exampulno.title}}<font class="sz_time">共{{exampulno.examcount}}题</font></h6>								
+									<ul class="sz_ke_ul">
+										<li class="sz_liu"><img src="/wap/tools/jquerymobile/img/sz_star.png" /><font class="sz_color_a">{{exampulno.begintime}}</font></li>
+										<li class="sz_si"><img src="/wap/tools/jquerymobile/img/sz_end.png" /><font class="sz_color_b">{{exampulno.endtime}}</font></li>
+									</ul>
+							</div>
+						</div>
+						<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+					</div>
+				</div>
+			<nomsg msg='暂无待完成考试' v-if='examPulnos.length ===0'></nomsg>
+			</div>
+			</template>
+			<load v-else></load>
+		</div>
+		<!--章节目录、课程介绍、讨论---结束-->
+	</div>
+
+	<script src="/wap/htmlc/teacher/exam/examlist.js"></script>
+<!--统计开始-->
+<!--在线时长-->
+<script>
+	var learningtimeinterval = 1;//设置为1分钟
+</script>
+<script src="/wap/htmlc/tongji/learningtimer.js"></script>
+<!--点击量-->
+<script language="javascript">
+	var tongji_hits_type = 14;//没有tongji_hits_productidid都是14
+	var tongji_hits_productid = 1;
+</script>
+<script src="/wap/htmlc/tongji/hits.js"></script>
+<!--停留时间-->
+<script language="javascript">
+	var tongji_visits_type = 14;
+	var tongji_visits_productid = 1;
+	var tongji_visits_interval = 0.5;//设置为30秒
+</script>
+<script language="javascript" src="/wap/htmlc/tongji/visits.js"></script>
+<!--统计结束-->
+</div>
+
+</body>
+</html>

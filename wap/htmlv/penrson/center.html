@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人资料</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+<!--Tab-->
+
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+	<div data-role="main" class="ui-content">
+    <template v-if="loading">
+      <div class="indivHead">
+        <img :src="indivImg" alt="">
+        <div class="indivMsg">
+          <h6>{{personMsg.truename}}</h6>
+          <div class="indivrole">{{role}}</div>
+        </div>
+      </div>
+      <div class="centerMain">
+        <div class="msgMore">
+         性别  <span class="info">{{personMsg.sex}}</span>
+        </div>
+        <div class="msgMore">
+         生日  <span class="info">{{birthday}}</span>
+        </div>
+        <div class="msgMore">
+         所属院校  <span class="info">{{personMsg.schoolname}}</span>
+        </div>
+        <div class="msgMore">
+         所属专业  <span class="info">{{personMsg.specialname}}</span>
+        </div>
+        <div class="msgMore">
+         最近登录时间  <span class="info">{{personMsg.lasttime}}</span>
+       </div>
+         <input type="button" value="解除绑定" class="exit" @click="centerExit" data-role="none">
+      </div>
+    </template>
+    <load v-else></load>
+	</div>
+	</div>
+<script src="/wap/htmlc/personData.js"></script>
+</body>
+</html>

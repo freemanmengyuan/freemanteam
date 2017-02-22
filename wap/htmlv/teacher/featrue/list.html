@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课堂互动</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content">
+        <div class="fcList">
+            <div class="fcTop">
+                <div class="myMsg">
+                  <img src="/wap/images/user.png" alt="头像"><br>
+                  <span class="nameSex"></span>
+                </div>
+            </div>
+            <div id="featrueList">
+              <div class="featrue" onclick="window.location.href='./sign/list.html'">
+                  <div class="ftIco" id="test">
+                      <img src="/wap/images/featrue/ico_hd1.png">
+                      <!-- <sub>待签到</sub> -->
+                  </div>
+                  <span class="ftWord">课堂签到</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='./discuss/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd2.png">
+                      <!-- <sub>1</sub> -->
+                  </div>
+                  <span class="ftWord">课堂讨论</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='./test/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd3.png">
+                      <!-- <sub>10</sub> -->
+                  </div>
+                  <span class="ftWord">课堂测验</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='./random/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd4.png">
+                      <!-- <sub>1</sub> -->
+                  </div>
+                  <span class="ftWord">随机提问</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='./brain/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd5.png">
+                      <!-- <sub>0</sub> -->
+                  </div>
+                  <span class="ftWord">头脑风暴</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='./rated/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd6.png">
+                      <!-- <sub>0</sub> -->
+                  </div>
+                  <span class="ftWord">课堂评价</span>
+              </div>
+            </div>
+
+        </div>
+        </div>
+</div>
+  <script src="/wap/htmlc/featrue/message.js"></script>
+    <!--统计开始-->
+    <!--在线时长-->
+    <script>
+        var learningtimeinterval = 1;//设置为1分钟
+    </script>
+    <script src="/wap/htmlc/tongji/learningtimer.js"></script>
+    <!--点击量-->
+    <script language="javascript">
+        var tongji_hits_type = 14;//没有tongji_hits_productidid都是14
+        var tongji_hits_productid = 1;
+    </script>
+    <script src="/wap/htmlc/tongji/hits.js"></script>
+    <!--停留时间-->
+    <script language="javascript">
+        var tongji_visits_type = 14;
+        var tongji_visits_productid = 1;
+        var tongji_visits_interval = 0.5;//设置为30秒
+    </script>
+    <script language="javascript" src="/wap/htmlc/tongji/visits.js"></script>
+    <!--统计结束-->
+</body>
+</html>

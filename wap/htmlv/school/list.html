@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>学院列表</title>
+	<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+	<link rel="stylesheet" href="../../css/main.css" />
+	<script src="../../tools//jquerymobile/jquery.min.js"></script>
+	<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+	<script src="../../tools/laytpl.js"></script><!--模板引擎-->
+	<script src="../../js/config.js"></script>
+<!--Tab-->
+<script language="javascript" type="text/javascript">
+	function ChangeDiv(divId,divName,zDivCount)
+	{          
+			for(i=0;i<zDivCount;i++)
+			{
+					document.getElementById(divName+i).style.display="none"; 
+					}
+			document.getElementById(divName+divId).style.display="";
+	 }
+</script>
+<!--字母检索-->
+<link rel="stylesheet" type="text/css" href="../../tools/slidernav/slidernav.css" media="screen, projection" />
+<!--jquery-1.4.2.min.js-->
+<script type="text/javascript" src="../../tools/slidernav/slidernav.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('#slider').sliderNav();
+});
+</script>
+</head>
+<script id="userInfo" type="text/html">
+	1231
+	<ul>
+		{{# for(var i = 0, len = d.result.length; i < len; i++){ }}
+		<a name="{{d.result[i].zimu}}" class="title">{{d.result[i].zimu}}</a>
+		<li><a href="#">{{d.result[i].name}}</a> </li>
+		{{# } }}
+	</ul>
+</script>
+<body>
+<div id="userInfoView">
+
+</div>
+<div data-role="page">
+	<div data-role="main" class="ui-content">
+		<div class="demo">
+			<div id="slider">
+				<div class="slider-content" id="sz_tw">
+					<!--视图容器 userInfoView-->
+					<ul>
+						<li id="a">
+						</li>
+						
+						<li id="b">
+						</li>
+		
+						<li id="c">
+						</li>
+		
+						<li id="d">
+						</li>
+		
+						<li id="e">
+						</li>
+		
+						<li id="f">
+						</li>
+		
+						<li id="g">
+		
+						</li>
+		
+						<li id="h">
+						</li>
+		
+						<li id="i">
+						</li>
+		
+						<li id="j">
+						</li>
+		
+						<li id="k">
+						</li>
+		
+						<li id="l">
+						</li>
+		
+						<li id="m">
+						</li>
+		
+						<li id="n">
+						</li>
+		
+						<li id="o">
+		
+						</li>
+		
+						<li id="p">
+						</li>
+		
+						<li id="q">
+						</li>
+		
+						<li id="r">
+						</li>
+		
+						<li id="s">
+						</li>
+		
+						<li id="t">
+						</li>
+		
+						<li id="u">
+						</li>
+		
+						<li id="v">
+						</li>
+		
+						<li id="w">
+
+						</li>
+		
+						<li id="x">
+
+						</li>
+		
+						<li id="y">
+
+						</li>
+		
+						<li id="z">
+
+						</li>
+		
+					</ul>
+		
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="../../htmlc/schools.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		var h1,h2;
+		h1 = $(window).height();//浏览器窗口高度
+		h2 = $('.sz_head').height();//顶部高度
+		h3 = h1-h2;
+		$('#sz_tw').height(h3);
+		$('.slider .slider-nav').height(h3);
+	});
+	</script>
+</div>
+
+</body>
+</html>

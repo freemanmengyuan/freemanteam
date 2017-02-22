@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的考试</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../tools/laytpl.js"></script>
+<script src="../../js/config.js"></script>
+	<script>
+		$(document).bind('pageinit', function() {
+			$('.next').bind('click', function(e) {
+				textNum(1)
+			});
+			$('.prev').bind('click', function(e) {
+				textNum(0)
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--我要评论-开始-->
+
+		<div data-role="content" class="sz_star_b">
+			<div class="ui-grid-solo sz_bg ui-shadow sz_martop" >
+				<!--内容-->
+				<div class="sz_bord"></div>
+				<div class="sz_abcd">
+
+				</div>
+			</div>
+
+			<div class="sz_zishu sz_martop"><font class="sz_color_a"></font>/<span class="sum"></span> &nbsp;&nbsp; &nbsp;&nbsp; <font class="tpoint"></font>分</div>
+			<input type="hidden" name="testNum" value="0" data-id="">
+		</div>
+	</div>
+	<div data-role="footer" data-position="fixed" class="sz_foot">
+		<div data-role="navbar">
+		  <ul>
+			<li><a href="#" data-icon="plus"class="prev">上一题</a></li>
+			<li><a href="#" data-icon="minus" class="save" onclick="save(1)">保存进度</a></li>
+			<li><a href="#" data-icon="check" class="next">下一题</a></li>
+		  </ul>
+		</div>
+	</div>
+</div>
+<script src="../../htmlc/exam/test.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>慧动课堂</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css?1" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/tools/laytpl.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<!--Tab-->
+</head>
+
+<body>
+<script id="ownModel" type="text/html">
+	<div class="sz_right">
+		<div class="sz_xiang">
+			<h6>{{d.result.truename}}</h6>
+			<div class="sz_zhich"></div>
+		</div>
+	</div>
+	<div class="sz_tou">
+		<img src="" alt="">
+</div>
+	{{# if(d.result.sex == "男"){
+	$('.sz_jiang').addClass("sex")
+}else if(d.result.sex == "女"){
+	$('.sz_jiang').addClass("sex1")
+	}
+	}}
+</script>
+<div data-role="page">
+	<!--滑出面板-->
+	<div data-role="panel" id="revealPanel" data-display="reveal">
+		<div id="owndata" class="sz_jiang clear personLeft" onclick="jumpPerom()">
+
+		</div>
+		<ul data-role="listview" class="sz_nav_lt">
+			<li><a href="javascript:;" data-href="/wap/htmlv/home.html"><img src="/wap/images/ico_6.png" class="ui-li-icon"> 学习首页</a></li>
+			<li><a href="javascript:;" data-href="/wap/htmlv/course/myCourse.html"><img src="/wap/images/ico_1.png" class="ui-li-icon"> 我的课程</a></li>
+			<li><a href="javascript:;" data-href="/wap/htmlv/homework/my.html"><img src="/wap/images/ico_2.png" class="ui-li-icon"> 我的作业</a></li>
+			<li><a href="javascript:;" data-href="/wap/htmlv/exam/my.html"><img src="/wap/images/ico_3.png" class="ui-li-icon"> 我的考试</a></li>
+			<li><a href="javascript:;" data-href="/wap/htmlv/featrue/list.html"><img src="/wap/images/ico_7.png" class="ui-li-icon"> 课堂互动</a></li>
+			<li><a href="javascript:;" data-href="/wap/htmlv/penrson/center.html"><img src="/wap/images/ico_4.png" class="ui-li-icon"> 个人资料</a></li>
+		</ul>
+    <div class="unbind">
+      解除绑定
+    </div>
+	</div>
+	<!-- <div data-role="header" data-position="fixed" class="ui-header ui-bar-inherit sz_head">
+		<a href="#revealPanel" class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext" id="zhezhao">个人中心</a>
+		<h1 class="ui-title" role="heading" aria-level="1"></h1>
+		<a href="#" class="ui-btn ui-btn-right ui-icon-search ui-btn-icon-notext" style="right:4em;">搜索</a>
+		<a href="#" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext">目录</a>
+	</div> -->
+	<div data-role="main" class="ui-content hsbg">
+		<div class="zhezhao"></div>
+				<a href="#revealPanel"  id="zhezhao"></a>
+    <iframe src="" class="indexfm"></iframe>
+	</div>
+</div>
+<script src="/wap/htmlc/route/route.js"></script>
+<script>
+function leftPanel(){
+	$("#zhezhao").click()
+}
+function jumpPerom(){
+	$("iframe").attr("src","/wap/htmlv/penrson/center.html")
+}
+  $(document).on("pageshow",function(){
+      var h1 =$(window).height()-$('.sz_head').outerHeight();
+      $('iframe').css('height',h1);
+			$('#zhezhao').click(function(){
+				$('.zhezhao').show();
+			})
+  });
+  $('.sz_nav_lt').on('click','a',function(){
+    var dataHref = $(this).attr("data-href");
+      $("iframe").attr("src",dataHref);
+  })
+</script>
+<script src="/wap/htmlc/owndata.js"></script>
+<script src="/wap/htmlc/featrue/weixinsdk.js"></script>
+</body>
+</html>

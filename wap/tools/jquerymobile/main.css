@@ -1,0 +1,183 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{ background-color:#f9f9f9;
+	font-family:"SimHei","sans","serif","monospace",Arial; color:#5f666b;
+
+}
+
+h1,h2,h3,h4,h5,h6,
+ul{ margin:0; padding:0;}
+a{ text-decoration:none;}
+.sz_color_a{ color:#31AC66;}
+.sz_color_b{ color:#FF9A00;}
+.sz_martop{ margin-top:10px;}
+.sz_marbot{ margin-bottom:1.2em;}
+.sz_tishi{ width:100%; height:8em; line-height:8em; text-align:center; vertical-align:middle;
+	font-size:1.3em; color:#aaa;}
+
+/*课程内容*/
+.sz_head{/* height:4em;*/ background-color:#5FADE3;}
+.sz_head .ui-btn{ width: 2em; height: 2em;}
+.sz_head .ui-btn-icon-notext:after{ width: 2em; height: 2em;}
+.sz_ziyuan{ text-align:center; max-height:360px;}
+.sz_ziyuan img{ width:100%;}
+.sz_zhuti .ui-btn{ height:3em; line-height:3em;}
+.sz_zhuti li a.ui-link{ border-bottom:3px solid #eee; color:#5f666b;}
+.sz_zhuti li a.ui-btn-active{ border-bottom:3px solid #31AC67; color:#31AC66;}
+.sz_star{ margin:0 5px 10px 5px; height:600px; overflow-x:hidden; overflow-y:auto;}/*---px---*/
+.sz_star_b{ margin:10px 5px;}
+.sz_bg{ background-color:#fff; padding:10px 0; border-radius:0 0 0.3125em  0.3125em;}
+/*章、节、知识点*/
+.sz_zhang,.sz_jie h3 a,p.sz_zhishi a{
+	height:3em; line-height:3em;
+	border-bottom:1px solid #dfdfdf; font-weight:normal;}
+.sz_zhang{ font-size:1.5em; padding:0 5px; font-weight:bold;}
+.sz_jie h3{ font-size:1.5em;}
+.sz_jie h3 a.ui-btn-icon-left::after{
+	background-position:0 1em; height: 3em; width:80%;}
+.sz_jie h3 .sz_img,
+.sz_img
+{ width:2.5em; height:3em; line-height:3em; vertical-align:middle; text-align:center; display:inline-block;
+position:absolute; right:0;}
+.sz_jie h3 .sz_img img,
+.sz_img img
+{ width:1em; height:1em;}
+.sz_jie .ui-collapsible-content{ padding:0; margin:0; border:none;}
+p.sz_zhishi{ padding:0; margin:0; border:none; position:relative;}
+p.sz_zhishi a{ display:block; height:3em; font-size:1.5em; padding-left:3.7em;}
+
+/*课程介绍*/
+.sz_kech{ font-size:1.5em; font-weight:bold; margin-left:5px; padding:0; line-height:2em;}
+h5.sz_lanmu{ font-size:1.5em; line-height:2em; font-weight:normal; margin:0 0 0 5px; padding:0;}
+.sz_jiang{ width:100%; height: 100%;}
+.sz_right{ float: left; width: 100%; height: 100%; }
+.sz_xiang{ margin-left: 4em; height: 100%;}
+.sz_xiang h6{ font-size:1.5em; font-weight:normal; line-height:2.5em;/* margin:0; padding:0;*/ position:relative;}
+.sz_xiang span{ font-size:1.3em; line-height:1.8em;}
+.sz_tou{ float: left; width: 4em; height:100%; min-height:3em; margin-left: -100%; text-align:center;}
+.sz_tou img{ width:3em; height:3em; margin-top:10px;border-radius:50%;border: 1px solid #ccc}
+.sex .sz_tou img{
+	border:1px solid blue;
+}
+.sex1 .sz_tou img{
+	border:1px solid #E0698E;
+}
+.sz_jiesh{ font-size:1.3em; line-height:1.8em; padding-left:5px;}
+/*课程讨论*/
+font.sz_time{ width:5em; text-align:center; color:#aaa; font-size:0.8em; display:inline-block; right:0; position:absolute;}
+.sz_bord{ font-size:1.3em; line-height:1.6em; padding:10px 0 10px 5px;
+	border:none; border-bottom:1px solid #eee; resize: none; overflow-y:auto;}
+.sz_zishu{ width:100%; font-size:1.1em; line-height:2em; text-align:right; color:#aaa;}
+.sz_laiyuan{ width:100%; font-size:1.1em; line-height:2em; color:#aaa;}
+/*我的收藏“课程、素材”-全部课程*/
+.sz_ke{ width:; height:9.5em; padding:10px; border-bottom:1px solid #dfdfdf;}
+.sz_ke_rt{ float:left; width:100%; height:9.5em;}
+.sz_ke_wen{ margin-left:17em; height:9.5em;}
+.sz_ke_wen a{ display:block; height:3em; font-size:1.5em; line-height:1.5em; font-weight:normal;
+	/*多行截断*/overflow:hidden; text-overflow:ellipsis; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical;
+}
+.sz_laizh{ font-size:1.4em; color:#31AC66; line-height:2.2em;
+	/*单行截断*/overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.sz_ke_ul{ width:100%; height:2em; line-height:2em;/* margin:0; padding:0;*/}
+.sz_ke_ul li{ float:left; color:#aaa; font-size:1.2em;/* line-height:1.2em;*/ display:inline-block; 
+	/*单行截断*/overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+	.sz_liu{ width:55%;}  .sz_si{ width:45%;}
+.sz_ke_ul li img{ float:left; width:1.2em; height:1.2em; margin-top:0.4em; display:inline-block; margin-right:3px;}
+.sz_ke_ul li font{ padding:0 3px;}
+.sz_ke_feng{ float: left; width:17em; height:9.5em; margin-left:-100%;}
+.sz_ke_feng img{ width:95%; max-width:290px; max-height:114px;}
+
+.sz_sucai{ width:100%; height:auto;/* margin:0; padding:0;*/}
+.sz_sucai li{ width:100%; height: 2em; line-height: 2em; padding:10px; border-bottom:1px solid #dfdfdf; font-size:1.6em; font-weight:normal;
+	/*单行截断*/overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}
+.sz_sucai li img{ float:left; width: 2em; height: 2em; display:inline-block; margin-right:10px;}
+
+/*我的作业*/
+.sz_zuoye{ text-align:center; font-size:1.5em; line-height:3em; padding-bottom:1.5px; margin-bottom:0.5em; font-weight:bold;
+ background:url(img/sz_ming_bg.png) repeat-x left bottom;} 
+.sz_alrt{ text-align:right;}
+.sz_alrt a{ display:inline-block; width:auto; padding:0 0.2em; height:1.2em; line-height:1.3em; margin-right:1em;
+border:1px solid #5FADE3; color:#5F666B;}
+.sz_alrt a:hover{ color:#5FADE3;}
+.sz_alrt font{ display:inline-block; width:auto; padding:0 0.2em; height:1.2em; line-height:1.3em; margin-right:1em;
+border:1px solid #31AC67; color:#5F666B; cursor:pointer;}
+.sz_abcd{ font-size:1em; line-height:2em; padding:1em 0 0 0.5em;}
+.sz_foot .ui-navbar ul li{ height:36px; line-height:36px;}
+.sz_foot .ui-navbar li .ui-btn{ padding:0; margin:0; line-height:36px;}
+/*滑出*/
+.sz_zhich{ font-size:0.8em; color:#aaa;}
+.sz_nav_lt li a{ height:4em; line-height:4em; font-size:1.5em; color:#5F666B; border:none;}
+/*.sz_nav_lt li a.a-active{ color:#5FADE3; background-color:#EEE;}*/
+.sz_nav_lt li a:hover{ color:#5FADE3; background-color:#EEE;}
+/*选择所在学校*/
+.sz_title{ width:100%; height:6em; line-height:6em; text-align:center; font-size:1.5em;}
+.sz_xuex .ui-field-contain label
+{ width:25%; display:inline-block; float:left; text-align:right; margin:0 5% 0 0; line-height: 2em;}
+.sz_xuex .ui-field-contain .ui-body-inherit
+{ width:60%; display:inline-block; float:left;}
+.sz_xuex .ui-field-contain {
+    border-bottom-width: 0;}
+.sz_xuex .ui-field-contain .ui-input-text{ border-radius:5px; border-color:#ccc;}
+/*公告*/
+.sz_bordtop{ border-top:1px solid #dfdfdf; padding:20px 0; margin:2em 1em 0 1em; line-height:1.6em;}
+
+/*登陆页面*/
+.yzMsg{
+	color: #5FADE3;
+	font-size: 14px;
+	text-align: center;
+	margin-top:1rem;
+}
+.ui-panel-wrapper{
+	background: #fff	/*修正bug 左导航显示*/;
+}
+/*--   个人中心    -- */
+.centerHead{
+	height: 70px;
+	box-sizing: border-box;
+	background: #fff;
+	border-bottom:1px solid #EEEEEE ;
+}
+.centerHead .sz_xiang{
+	display: inline-block;
+	margin-left: 0;
+	margin-top: 5px;
+}
+.centerHead img{
+	margin: 9px 12px;
+	float: left;
+}
+.centerMain{
+	font-size: 14px;
+	color: #93979a;
+	line-height: 40px;
+	background: #fff;
+}
+.centerLeft{
+	width: 80px;
+	float: left;
+	padding-left: 10px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #eee;
+}
+.centerRight{
+	width: 100%;
+	border-bottom: 1px solid #eee;
+}
+/*  引导页  */
+.guide{
+	background:url("img-32/guide.png") no-repeat center;
+	background-size:100% auto;
+	position: relative;
+}
+.guide input{
+	background:#396888;
+	font-size: 16px;
+	border: 0;
+	width: 100%;
+	height: 49px;
+	color: #fff;
+	position: absolute;
+	bottom: 0;;
+}

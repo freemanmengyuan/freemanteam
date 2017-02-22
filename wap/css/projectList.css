@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  list-style: none; }
+
+.courseBody {
+  background-color: #eee;
+  padding: 0 5px; }
+
+.projectList {
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  width: 49.5%;
+  margin-right: 1%;
+  float: left;
+  background: #43A0AF;
+  padding: 1em 0;
+  margin-bottom: 1%; }
+  .projectList p {
+    padding: 0 10px;
+    height: 2.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-height: 1.4rem;
+    -webkit-box-orient: vertical;
+    -webkit-box-pack: center;
+    overflow: hidden; }
+  .projectList img {
+    max-height: 60px;
+    max-width: 80%; }
+
+.projectList:nth-child(1), .projectList:nth-child(2) {
+  margin-top: 1%; }
+
+.projectList:nth-child(2n) {
+  margin-right: 0; }

@@ -1,0 +1,93 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0; }
+
+.priviewText {
+  width: 100%;
+  font-size: 14px;
+  padding: 10px;
+  line-height: 20px;
+  background: #fff;
+  box-sizing: border-box; }
+
+.priviewNav {
+  width: 100%; }
+  .priviewNav .prContent {
+    width: 100%; }
+
+.courseBody {
+  background-color: #eee; }
+
+.bx-viewport {
+  box-sizing: border-box; }
+
+.prTitle {
+  padding: 0 10px;
+  line-height: 40px;
+  height: 40px;
+  background: #43A0AF; }
+  .prTitle h2 {
+    font-size: 16px;
+    font-weight: normal;
+    padding: 2px 0;
+    color: #ffffff;
+    float: left; }
+
+.return {
+  text-decoration: none;
+  float: right; }
+  .return img {
+    margin-top: 10px;
+    height: 20px; }
+
+/* 滑块盒子*/
+.rangeBox {
+  position: relative;
+  background: #fff;
+  margin-top: 10px;
+  padding: 2px 20px 6px 10px;
+  border: 1px dashed #ddd; }
+  .rangeBox .rangMin {
+    color:#000;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    bottom: 6px; }
+  .rangeBox .rangMax {
+    color:#000;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 6px; }
+
+input[type="range"] {
+  /*  滑块 */
+  margin-top: 2px;
+  background-color: #ccc;
+  border-radius: 15px;
+  margin: 10px 0;
+  -webkit-appearance: none;
+  height: 1px; }
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: default;
+  height: 25px;
+  width: 25px;
+  background: none repeat scroll 0 0 #43A0AF;
+  border-radius: 50%; }
+
+.tzImg {
+  /*按钮跳转*/
+  width: 100%;
+  font-size: 14px;
+  color: #43A0AF;
+  padding: 10px 0;
+  margin: 0 auto;
+  text-align: center; }
+  .tzImg input[type=text] {
+    width: 30px;
+    vertical-align: middle;
+    text-align: center;
+    border: none; }

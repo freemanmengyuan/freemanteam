@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>课堂测验</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--我要评论-开始-->
+
+		<div data-role="content" class="sz_star_b">
+			<div class="ui-grid-solo sz_bg ui-shadow sz_martop" >
+				<!--内容-->
+				<template v-if="loading">
+					<template v-if="!doType">
+						<div class="sz_bord">{{testmain.stem}}</div>
+						<div class="sz_abcd">
+							<ul class="testoption">
+								<template v-if="testmain.type!=='2'">
+									<li v-for="xuan in testmain.options" class="clear">
+				            <input type="radio" class="option-input radio" name="test" :value="$index | numChange" v-model="answer" :id="'test'+$index">
+										<label class="optmain" :for="'test'+$index">
+											{{$index | numChange}}.{{xuan}}
+										</label>
+									</li>
+								</template>
+								<template v-else>
+									<li v-for="xuans in testmain.options" class="clear">
+											<input type="checkbox" class="option-input checkbox"  data-role="none" name="test" :value="$index | numChange" v-model="answer" :id="'test'+$index">
+											<label class="optmain" :for="'test'+$index">
+												{{$index | numChange}}.{{xuans}}
+											</label>
+										</li>
+								</template>
+							</ul>
+						</div>
+					</template>
+					<template v-else>
+						<div class="sz_bord">{{testmain.stem}}</div>
+						<div class="sz_abcd">
+							<ul class="testoption">
+									<li v-for="xuan in testmain.options" :class="{'active':activeT[$index]}">{{$index | numChange}}.{{xuan}} </li>
+							</ul>
+							<div>
+								我的答案:{{testmain.answer_info.studentAnswer}}
+								<p class="trueAs">正确答案:{{testmain.answer}}</p>
+								<template v-if="testmain.answer_info.studentAnswer === testmain.answer">
+										回答正确
+								</template>
+								<template v-else>
+										回答错误
+								</template>
+							</div>
+					</template>
+				</template>
+				<load v-else></load>
+			</div>
+
+			<div class="sz_zishu sz_martop"> <span class="testType">{{testmain.type | testType}}</span></div>
+			<resubmit :msg.sync="btnmsg" :btnclass="{testsub:true,disabled:btnmsg!=='提交'}" data-role="none" :retrue="retrue" @click="testsub($event)" v-if="!doType&&loading"></resubmit>
+		</div>
+	</div>
+</div>
+<script src="/wap/htmlc/featrue/test/main.js"></script>
+</body>
+</html>

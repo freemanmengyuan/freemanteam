@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>我的作业</title>
+    <link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script src="../../tools/jquerymobile/jquery.min.js"></script>
+    <script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="../../tools/laytpl.js"></script>
+    <script src="../../js/config.js"></script>
+    <script type="text/javascript" src="/wap/js/canvasimg.js"></script>
+    <style media="screen">
+      canvas{
+        height: 150px
+      }
+    </style>
+</head>
+<body>
+<script id="ownModel" type="text/html">
+	<div class="sz_right">
+		<div class="sz_xiang">
+			<h6>{{d.result.truename}}</h6>
+			<div class="sz_zhich"></div>
+		</div>
+	</div>
+	<div class="sz_tou">
+		{{# if(!d.result.facepict){
+		d.result.facepict=peosonDefault
+		}else{
+		d.result.facepict=d.result.facepict
+		}
+		}}
+		<img src="{{d.result.facepict}}"></div>
+	{{# if(d.result.sex == "男"){
+	$('.sz_jiang').addClass("sex")
+}else if(d.result.sex == "女"){
+	$('.sz_jiang').addClass("sex1")
+	}
+	}}
+</script>
+<div data-role="page" class="nPage">
+    <div data-role="panel" id="revealPanel" data-display="reveal">
+        <div id="owndata" class="sz_jiang" onclick="window.location.href='../penrson/center.html'">
+
+        </div>
+        <div style="clear:both; height:1em;"></div>
+        <ul data-role="listview" class="sz_nav_lt">
+            <li><a href="javascript:;" onclick="location.href='../course/myCourse.html'"><img src="../../tools/jquerymobile/img/Image1.png" class="ui-li-icon">我的课程</a></li>
+            <li class="active"><a href="#revealPanel"><img src="../../tools/jquerymobile/img/Image3-b.png" class="ui-li-icon">我的作业</a></li>
+            <li><a href="javascript:;" onclick="location.href='../exam/my.html'"><img src="../../tools/jquerymobile/img/Image4.png" class="ui-li-icon">我的考试</a></li>
+            <li><a href="javascript:;" onclick="location.href='../penrson/center.html'"><img src="../../tools/jquerymobile/img/Image6.png" class="ui-li-icon">个人资料</a></li>
+        </ul>
+    </div>
+    <div data-role="header" data-position="fixed" class="ui-header ui-bar-inherit sz_head">
+        <a href="#revealPanel" class="ui-btn ui-btn-left ui-icon-bars ui-btn-icon-notext">个人中心</a>
+        <h1 class="ui-title" role="heading" aria-level="1">&nbsp;</h1>
+        <!--<a href="#" class="ui-btn ui-btn-right ui-icon-search ui-btn-icon-notext" style="right:4em;">搜索</a>-->
+        <!--<a href="#" class="ui-btn ui-btn-right ui-icon-bars ui-btn-icon-notext">目录</a>-->
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <div class="fcList">
+            <div class="fcTop">
+                <canvas id="canvas_circle"></canvas>
+            </div>
+            <div class="signIn">
+              <div data-role="navbar" class="ui-navbar sz_marbot" role="navigation">
+                <ul class="ui-grid-a sz_zhuti">
+                <li><a class="ui-btn-active" href="#" data-role="button" onClick="ChangeDiv('0','Div_',2)" >已签到(10人)</a></li>
+                <li><a href="#" data-role="button" onClick="ChangeDiv('1','Div_',2)" >未签到（90人）</a></li>
+                </ul>
+              </div>
+              <div id="Div_0">
+                  <ul class="signInList">
+                    <li>李文忠1</li>
+                    <li>李文忠2</li>
+                    <li>李文忠3</li>
+                    <li>李文忠4</li>
+                    <li>李文忠5</li>
+                    <li>李文忠6</li>
+                    <li>李文忠7</li>
+                    <li>李文忠8</li>
+                    <li>李文忠9</li>
+                    <li>李文忠10</li>
+                  </ul>
+              </div>
+              <div id="Div_1" style="display:none">
+                <ul class="signInList">
+                    <li>我就是不签到1</li>
+                    <li>我就是不签到2</li>
+                    <li>我就是不签到3</li>
+                    <li>我就是不签到4</li>
+                    <li>我就是不签到5</li>
+                    <li>我就是不签到6</li>
+                    <li>我就是不签到7</li>
+                    <li>我就是不签到8</li>
+                    <li>我就是不签到9</li>
+                    <li>我就是不签到10</li>
+                    <li>我就是不签到11</li>
+                    <li>我就是不签到12</li>
+                    <li>我就是不签到13</li>
+                    <li>我就是不签到14</li>
+                    <li>我就是不签到15</li>
+                    <li>我就是不签到16</li>
+                    <li>我就是不签到17</li>
+                    <li>我就是不签到18</li>
+                    <li>我就是不签到19</li>
+                    <li>我就是不签到20</li>
+                    <li>我就是不签到21</li>
+                    <li>我就是不签到22</li>
+                    <li>我就是不签到23</li>
+                    <li>我就是不签到24</li>
+                    <li>我就是不签到25</li>
+                    <li>我就是不签到26</li>
+                    <li>我就是不签到27</li>
+                    <li>我就是不签到28</li>
+                    <li>我就是不签到29</li>
+                    <li>我就是不签到30</li>
+                    <li>我就是不签到31</li>
+                    <li>我就是不签到32</li>
+                    <li>我就是不签到33</li>
+                    <li>我就是不签到34</li>
+                    <li>我就是不签到35</li>
+                    <li>我就是不签到36</li>
+                    <li>我就是不签到37</li>
+                    <li>我就是不签到38</li>
+                    <li>我就是不签到39</li>
+                    <li>我就是不签到40</li>
+                    <li>我就是不签到41</li>
+                    <li>我就是不签到42</li>
+                    <li>我就是不签到43</li>
+                    <li>我就是不签到44</li>
+                    <li>我就是不签到45</li>
+                    <li>我就是不签到46</li>
+                    <li>我就是不签到47</li>
+                    <li>我就是不签到48</li>
+                    <li>我就是不签到49</li>
+                    <li>我就是不签到50</li>
+                    <li>我就是不签到51</li>
+                    <li>我就是不签到52</li>
+                    <li>我就是不签到53</li>
+                    <li>我就是不签到54</li>
+                    <li>我就是不签到55</li>
+                    <li>我就是不签到56</li>
+                    <li>我就是不签到57</li>
+                    <li>我就是不签到58</li>
+                    <li>我就是不签到59</li>
+                    <li>我就是不签到60</li>
+                    <li>我就是不签到61</li>
+                    <li>我就是不签到62</li>
+                    <li>我就是不签到63</li>
+                    <li>我就是不签到64</li>
+                    <li>我就是不签到65</li>
+                    <li>我就是不签到66</li>
+                    <li>我就是不签到67</li>
+                    <li>我就是不签到68</li>
+                    <li>我就是不签到69</li>
+                    <li>我就是不签到70</li>
+                    <li>我就是不签到71</li>
+                    <li>我就是不签到72</li>
+                    <li>我就是不签到73</li>
+                    <li>我就是不签到74</li>
+                    <li>我就是不签到75</li>
+                    <li>我就是不签到76</li>
+                    <li>我就是不签到77</li>
+                    <li>我就是不签到78</li>
+                    <li>我就是不签到79</li>
+                    <li>我就是不签到80</li>
+                    <li>我就是不签到81</li>
+                    <li>我就是不签到82</li>
+                    <li>我就是不签到83</li>
+                    <li>我就是不签到84</li>
+                    <li>我就是不签到85</li>
+                    <li>我就是不签到86</li>
+                    <li>我就是不签到87</li>
+                    <li>我就是不签到88</li>
+                    <li>我就是不签到89</li>
+                    <li>我就是不签到90</li>
+                </ul>
+              </div>
+            </div>
+      </div>
+    </div>
+</div>
+<script src="../../htmlc/owndata.js"></script>
+<script type="text/javascript">
+$(document).on("pageinit",function(event){
+  var canvasId = new DrawCircle("canvas_circle",[0.1,0.9],["#B0DC00", "#ED7D31"],["已签到", "未签到"]);
+  canvasId.drawing()
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>登录</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../js/config.js"></script>
+</head>
+
+<body>
+
+<div data-role="page" class="loginbg">
+
+	<div data-role="main" class="ui-content">
+		<!--选择学校-开始-->
+		<div class="logintit">
+			慧动课堂
+		</div>
+	<div class="loginmain">
+		<input type="text" id="schoolname" readonly="readonly">
+		<input type="text" name="username" id="username" placeholder="请输入用户名">
+		<input type="password" name="userword" id="userword" placeholder="请输入密码">
+		<div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset">		<a href="javascript:;" onclick="login()" class="login">马上登录</a></div>
+		<div class="versoin">
+			移动端云app v1.0 beta版
+		</div>
+	</div>
+	</div>
+
+</div>
+<script src="/wap/htmlc/login.js"></script>
+</body>
+</html>

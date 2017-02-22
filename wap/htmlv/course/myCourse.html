@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全部课程</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+<!--Tab-->
+</head>
+
+<body>
+
+<div data-role="page">
+	<!--滑出面板-->
+
+	<div data-role="main" class="ui-content">
+		<!--课程列表---开始-->
+		<div data-role="content" class="sz_star_b">
+        <div class="navList" v-if="loading">
+            <ul class="navListMain" v-if="curseLists.length!==0">
+              <li v-for="list in curseLists" @click="jumpcour($index)">
+                <a href="#" class="lesson"><img :src="list.logo | wip" alt=""></a>
+                <div class="courseDetails">
+                  <h5>{{list.title}}</h5>
+                  <span class="specialName">{{list.specialname}}</span>
+                  <span class="pace">已学：{{list.learnsections}}%</span>
+                  <span class="paceLesson"></span>
+                </div>
+                <span class="courseing">正在学习</span>
+                </li>
+            </ul>
+            <nomsg msg="当前没有正在学习的课程" v-else></nomsg>
+        </div>
+        <load v-else></load>
+		</div>
+	</div>
+</div>
+<script src="/wap/htmlc/curseList.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课堂讨论</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content hiddenHight">
+        <div class="discussMsg">
+        <div class="listnoe loadF"></div>
+            <ul class="msgList">
+            </ul>
+        <div class="listnoe loadmore">加载更多</div>
+        </div>
+        <div class="discussBtn">
+          <textarea name="discusstxt" data-role="none"></textarea>
+          <input type="button" value="发送" data-role="none" id="sendMsg" style="font-size:14px;">
+        </div>
+    </div>
+</div>
+<script>
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.sz_head').outerHeight()-110;
+    $('.msgList').css('height',h1)
+});
+</script>
+<script src="/wap/htmlc/teacher/featrue/discuss/main.js"></script>
+</body>
+</html>

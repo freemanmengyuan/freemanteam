@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>随机提问</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content hiddenHight">
+        <input type="button" name="name" value="更换学生" data-role="none" class="btn btnDefault js_sub">
+        <div class="discussMsg">
+        <div class="listnoe loadF"></div>
+        <div class="radomperson">
+          提问人：<span class="name"></span>  <br>
+          <div class="js_msg">
+
+          </div>
+        </div>
+    </div>
+</div>
+<script>
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.sz_head').outerHeight()-110;
+    $('.msgList').css('height',h1)
+});
+</script>
+<script src="/wap/htmlc/teacher/featrue/random/main.js"></script>
+</body>
+</html>

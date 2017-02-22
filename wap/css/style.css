@@ -1,0 +1,274 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+ul, li {
+  list-style: none; }
+
+.courseBody {
+  background-color: #eee; }
+
+.courseNav img {
+  width: 100%; }
+
+.curseList {
+  padding: 0 8px;
+  background: #fff;
+  font-size: 14px; }
+  .curseList li {
+    line-height: 40px; }
+  .curseList img {
+    width: 12px;
+    margin-right: 16px;
+    vertical-align: middle;
+    margin-top: -2px; }
+
+.curseList > li {
+  font-weight: bold;
+  margin: 0 3px;
+  padding: 0 3px;
+  border-bottom: 1px solid #ddd; }
+
+.curseList li li {
+  font-weight: normal;
+  border-top: 1px solid #ddd; }
+
+.curseList li li li {
+  padding-left: 35px; }
+
+.curseList li ul {
+  display: none; }
+.chapters li>.scList{
+  display: none;
+  padding-left:35px; 
+}
+.scList {
+  border-top: 1px dashed #ddd;
+  line-height: 40px;
+  height: 40px;
+  font-size: 0;
+  /* 内联元素 的 空白区域*/
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; }
+
+/* 0 是其他
+ * 1 是文本类
+ * 2 是图形图像类
+ * 3 是音频类
+ * 4 是视频类
+ * 5 是动画类
+ * 7 是去哦他类
+ * 8 是ppt
+ * 9 是网页课件
+ * 10
+ * 11 是world 文档
+ * 12 是 xls
+ * 13 压缩文件
+ * t5 压缩文件
+ * t6 是富文本
+*/
+.sc0 {
+  background: url("../images/sucai/0.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc1 {
+  background: url("../images/sucai/1.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc2 {
+  background: url("../images/sucai/2.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc3 {
+  background: url("../images/sucai/3.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc4 {
+  background: url("../images/sucai/4.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc5 {
+  background: url("../images/sucai/5.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc7 {
+  background: url("../images/sucai/7.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc8 {
+  background: url("../images/sucai/8.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc9 {
+  background: url("../images/sucai/9.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc10 {
+  background: url("../images/sucai/10.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc11 {
+  background: url("../images/sucai/11.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc12 {
+  background: url("../images/sucai/12.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sc13 {
+  background: url("../images/sucai/13.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sct5 {
+  background: url("../images/sucai/t5.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+.sct6 {
+  background: url("../images/sucai/t6.png") no-repeat center;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 10px; }
+
+/* 动画部分 */
+.chapters {
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0); }
+
+.animation1 {
+  -webkit-animation: myfirst 0.5s forwards;
+  /* Safari and Chrome */
+  animation: myfirst 0.5s forwards; }
+
+.animation2 {
+  animation: mysecond 0.5s forwards;
+  -webkit-animation: mysecond 0.5s forwards;
+  /* Safari and Chrome */ }
+
+.animationleve {
+  animation: myleave1 0.5s forwards;
+  -webkit-animation: myleave1 0.5s forwards;
+  /* Safari and Chrome */ }
+
+.animationBack {
+  animation: myfirstBack 0.5s forwards;
+  -webkit-animation: myfirstBack 0.5s forwards; }
+
+@keyframes myfirst {
+  from {
+    transform: scaleY(0); }
+  to {
+    transform: scaleY(1); } }
+
+@-webkit-keyframes myfirst {
+  from {
+    -webkit-transform: scaleY(0); }
+  to {
+    -webkit-transform: scaleY(1); } }
+
+@keyframes myfirstBack {
+  from {
+    transform: scaleY(1); }
+  to {
+    transform: scaleY(0); } }
+
+@-webkit-keyframes myfirstBack {
+  from {
+    -webkit-transform: scaleY(1); }
+  to {
+    -webkit-transform: scaleY(0); } }
+
+@-webkit-keyframes mysecond {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(90deg); } }
+
+@keyframes mysecond {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(90deg); } }
+
+@-webkit-keyframes myleave1 {
+  from {
+    -webkit-transform: rotate(90deg); }
+  to {
+    -webkit-transform: rotate(0deg); } }
+
+@keyframes myleave1 {
+  from {
+    transform: rotate(90deg); }
+  to {
+    transform: rotate(0deg); } }
+.prTitle {
+  padding: 0 10px;
+  line-height: 40px;
+  height: 40px;
+  background: #43A0AF; }
+.prTitle h2 {
+  font-size: 16px;
+  font-weight: normal;
+  padding: 2px 0;
+  color: #ffffff;
+  float: left; }
+.prTitle>img{
+  height: 20px;
+  float: right;
+  margin-top:12px;
+}
+.scList:empty{
+  display: none;
+}
+.open{
+  height:100%;
+  overflow: hidden;;
+}
+.points .scList{
+  display: none;
+}

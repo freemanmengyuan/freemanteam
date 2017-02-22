@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>课程内容</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<link rel="stylesheet" href="../../css/style.css">
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../tools/laytpl.js"></script>
+<script src="../../js/config.js"></script>
+<script src="../../js/animation0.js"></script>
+<!--Tab-->
+<script language="javascript" type="text/javascript">
+        function ChangeDiv(divId,divName,zDivCount)
+        {
+                for(i=0;i<zDivCount;i++)
+                {
+                        document.getElementById(divName+i).style.display="none";
+                        }
+                document.getElementById(divName+divId).style.display="";
+         }
+</script>
+<script id="courseMain" type="text/html">
+	<ul class="curseList">
+    测试
+		{{# for(var i = 0, len = d.data.length; i < len; i++){ }}
+		<li>{{d.data[i].zhangname}}
+			<ul class="chapters">
+			{{# for(var j = 0, len1 = d.data[i].zhangchild.length; j < len1; j++){ }}
+				<li><img src="../../images/select-ico.jpg" alt="">{{d.data[i].zhangchild[j].jiename}}
+					<div class="scList">{{# for(var h = 0, len4 = d.data[i].zhangchild[j].jielessons.length; h < len4; h++){ }}<a href="javascript:void(0);"  class="sc{{d.data[i].zhangchild[j].jielessons[h].imagetypeid}}" data-title="{{d.data[i].zhangchild[j].jielessons[h].jietitle}}" data-src="footage.html?{{d.data[i].zhangchild[j].jielessons[h].id}}"></a>{{# } }}</div>
+					<ul class="points">
+						{{# for(var k = 0, len2 = d.data[i].zhangchild[j].jiechild.length; k < len2; k++){ }}
+						<li>
+							<img src="../../images/select-ico.jpg" alt="">{{d.data[i].zhangchild[j].jiechild[k].zhiname}}
+							<div class="scList">{{# for(var g = 0, len5 = d.data[i].zhangchild[j].jiechild[k].zhilessons.length; g < len5; g++){ }}
+								<a href="javascript:void(0);"  class="sc{{d.data[i].zhangchild[j].jiechild[k].zhilessons[g].imagetypeid}}" data-title="{{d.data[i].zhangchild[j].jiechild[k].zhilessons[g].zhititle}}" data-src="footage.html?{{d.data[i].zhangchild[j].jiechild[k].zhilessons[g].id}}"></a>
+
+								{{# } }}</div>
+						</li>
+						{{# } }}
+					</ul>
+				</li>
+			{{# } }}
+			</ul>
+		</li>
+		{{# } }}
+		</ul>
+		<!--一个章-->
+</script>
+
+</head>
+
+<body>
+
+<div data-role="page">
+	<!--滑出面板-->
+	<div data-role="main" class="ui-content">
+		<div data-position="fixed" class="ui-grid-solo sz_ziyuan"></div>
+		<!--章节目录、课程介绍、讨论---开始-->
+		<div data-role="navbar" class="ui-navbar sz_marbot" role="navigation">
+		  <ul class="ui-grid-a sz_zhuti">
+			<li><a class="ui-btn-active" href="#" data-role="button" >章节目录</a></li>
+			<!--<li><a href="#" data-role="button" onClick="ChangeDiv('1','Div_',2)" >讨论</a></li>-->
+		  </ul>
+		</div>
+		<div data-role="content" class="sz_star">
+			<div id="Div_0">
+				<div class="loading">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+			<div class="ifram" style="display:none;position: fixed;top: 0;height: 100%;width: 100%;left:0;bottom:0;background: #fff">
+				<div class="prTitle">
+					<h2></h2>  <img style="" src="../../images/close.png">
+				</div>
+				<iframe src="" frameborder="0" width="100%" style="min-height: 100%;"></iframe>
+			</div>
+	</div>
+
+</div>
+<script src="../../htmlc/coures/main.js"></script>
+</body>
+</html>

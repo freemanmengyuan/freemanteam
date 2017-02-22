@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>慧动课堂</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<link rel="stylesheet" href="/wap/tools/bxslider/jquery.bxslider.css">
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/tools/bxslider/jquery.bxslider.min.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+<!--Tab-->
+</head>
+<body>
+<div class="banner-box">
+  <ul class="bxslider">
+    <li><img src="/wap/images/banner/banner-01.jpg"></li>
+    <li><img src="/wap/images/banner/banner-02.jpg"></li>
+    <li><img src="/wap/images/banner/banner-03.jpg"></li>
+  </ul>
+</div>
+<div class="newNotice">
+    <img src="/wap/images/ico_b.png" alt="最新公告">
+    <span class="notices">最新公告通知：课程章节新增十个知识点</span>
+</div>
+<div class="featrue-box">
+    <div class="featrue-main" onclick="window.location.href='/wap/htmlv/course/myCourse.html'">
+      <div class="coursebg">
+        <img src="/wap/images/ico_c.png">
+      </div><br>
+      <span>
+        我的课程
+      </span>
+    </div>
+    <div class="featrue-main" onclick="window.location.href='/wap/htmlv/homework/my.html'">
+      <div class="homeworkbg">
+          <img src="/wap/images/ico_d.png">
+      </div>
+      <br>
+      <span>
+        我的作业
+      </span>
+    </div>
+    <div class="featrue-main" onclick="window.location.href='/wap/htmlv/exam/my.html'">
+      <div class="testbg">
+      <img src="/wap/images/ico_e.png">
+      </div>
+      <br>
+      <span>
+        我的考试
+      </span>
+    </div>
+</div>
+<div class="interact" onclick="window.location.href='/wap/htmlv/featrue/list.html'">
+    <img src="/wap/images/ico_f.png" alt="课程互动">
+</div>
+<div class="navList">
+    <ul class="navListMain clear" id="curselists" v-if = "loading">
+			<li @click = 'jump($index)'v-for = "course in courses">
+				<a href="#" class="lesson"><img :src="course.logo | wip" alt=""></a>
+				<div class="courseDetails">
+					<h5>{{course.title}}</h5>
+					<span class="specialName">{{course.specialname}}</span>
+					<span class="pace">已学：{{course.learnsections}}%</span> <span class="paceLesson"></span>
+				</div>
+				<span class="courseing">正在学习</span>
+			</li>
+			<nomsg msg="当前没有正在学习的课程" v-if = 'courses.lengths===0'></nomsg>
+    </ul>
+		<load v-else></load>
+</div>
+<div class="copyright">
+      慧动课堂 版权所有<br>
+      copyright 2012-2015 Tesoon.all rights Reserved
+</div>
+<script>
+var slider = $('.bxslider').bxSlider({
+  controls:false,
+  auto:true,
+  pager:true
+});
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.newNotice').outerHeight()-$('.featrue-box').outerHeight()-
+            $('.interact').outerHeight()-190-$('.copyright').outerHeight()-$('.sz_head').outerHeight()-20;
+    $('.navList').css('min-height',h1);
+});
+</script>
+<script src="/wap/htmlc/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="scanQRCode1">
+
+    test
+</div>
+
+<script>
+    wx.ready(function () {
+        document.querySelector('#scanQRCode1').onclick = function () {
+            wx.scanQRCode({
+                needResult: 1,
+                desc: 'scanQRCode desc',
+                success: function (res) {
+                    alert(JSON.stringify(res));
+                }
+            });
+        };
+    })
+    wx.error(function (res) {
+        alert(res.errMsg);
+    });
+</script>
+</body>
+</html>

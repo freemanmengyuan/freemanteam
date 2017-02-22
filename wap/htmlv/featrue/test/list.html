@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课堂测验</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/js/config.js"></script>
+    <script src="/wap/tools/vue/vue.js"></script>
+    <script src="/wap/js/component.js"></script>
+</head>
+<body>
+  <div data-role="page" class="nPage">
+
+  	<div data-role="main" class="ui-content">
+  		<!--未完成、待批改、已批改---开始-->
+  		<div data-role="content">
+          <template v-if="loading">
+            <ul class="listNormal" v-if="forTestList.lengt!==0">
+              <li v-for=" forTest in forTestList" @click="testMain($index,0)">{{forTest.stem}}  <span style="float:right">未完成</span></li>
+              <template v-if="testFinList.lengt!==0">
+                <li v-for=" testFin in testFinList" @click="testMain($index,1)">{{testFin.stem}} <span style="float:right">已完成</span></li>
+              </template>
+            </ul>
+          </template>
+          <load v-else></load>
+          <nomsg msg="暂时没有试题" v-if="!loading&&(forTestList.lengt===0)&&(testFinList.lengt===0)"></nomsg>
+  			</div>
+  		<!--章节目录、课程介绍、讨论---结束-->
+  	</div>
+  </div>
+<script>
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.sz_head').outerHeight()-70;
+    $('.discussMsg').css('height',h1)
+});
+</script>
+<script src="/wap/htmlc/featrue/test/list.js"></script>
+</body>
+</html>

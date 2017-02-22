@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课程评价</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+  <div class="evalstar">
+    <span>课堂评星：</span>
+      <ul class="star">
+        <li class="active"></li>
+        <li class="active"></li>
+        <li class="active"></li>
+        <li class="active"></li>
+        <li class="active"></li>
+      </ul>
+      <input type="hidden" name="star" value="5">
+  </div>
+  <div class="eval">
+    <span>评价内容：</span>
+    <textarea name="evalcont">很好</textarea>
+    <div class="warnMsg">
+        仅能评价一次。请勿重复提交
+    </div>
+    <input type="button" value="提交" id="addeva">
+  </div>
+<script>
+</script>
+<script src="/wap/htmlc/featrue/rated/main.js"></script>
+</body>
+</html>

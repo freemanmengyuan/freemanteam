@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课堂互动</title>
+    <link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <script src="../../tools/jquerymobile/jquery.min.js"></script>
+    <script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="../../tools/laytpl.js"></script>
+    <script src="../../js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content">
+        <div class="fcList">
+            <div class="fcTop">
+                <div class="myMsg">
+                  <img src="/wap/images/user.png" alt="头像"><br>
+                  <span class="nameSex"></span>
+                </div>
+            </div>
+            <div id="featrueList">
+              <div class="featrue">
+                  <div class="ftIco" id="test">
+                      <img src="/wap/images/featrue/ico_hd1.png">
+                      <!-- <sub>待签到</sub> -->
+                  </div>
+                  <span class="ftWord">课堂签到</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='/wap/htmlv/featrue/discuss/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd2.png">
+                      <!-- <sub>1</sub> -->
+                  </div>
+                  <span class="ftWord">课堂讨论</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='/wap/htmlv/featrue/test/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd3.png">
+                      <!-- <sub>10</sub> -->
+                  </div>
+                  <span class="ftWord">课堂测验</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='/wap/htmlv/featrue/random/main.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd4.png">
+                      <!-- <sub>1</sub> -->
+                  </div>
+                  <span class="ftWord">随机提问</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='/wap/htmlv/featrue/brain/list.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd5.png">
+                      <!-- <sub>0</sub> -->
+                  </div>
+                  <span class="ftWord">头脑风暴</span>
+              </div>
+              <div class="featrue" onclick="window.location.href='/wap/htmlv/featrue/rated/main.html'">
+                  <div class="ftIco">
+                      <img src="/wap/images/featrue/ico_hd6.png">
+                      <!-- <sub>0</sub> -->
+                  </div>
+                  <span class="ftWord">课堂评价</span>
+              </div>
+            </div>
+
+        </div>
+        </div>
+</div>
+  <script src="/wap/htmlc/featrue/message.js"></script>
+  <script type="text/javascript">
+  // $(document).on('pageshow',function(){
+  //   var h1 = $('html').height();
+  //   var h2 = $('.ui-content').height();
+  //   if((h1-h2)>0){
+  //       $('#featrueList').css('margin-top',(h1-h2)/2)
+  //   }else{
+  //
+  //   }
+  // })
+  parent.wx.ready(function(){
+    document.querySelector('#test').onclick = function () {
+      parent.wx.scanQRCode();
+    }
+  }
+  )
+  </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的考试</title>
+<link rel="stylesheet" href="../../tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="../../css/main.css" />
+<script src="../../tools/jquerymobile/jquery.min.js"></script>
+<script src="../../tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="../../js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--未完成、待批改、已批改---开始-->
+		<div data-role="navbar" class="ui-navbar sz_marbot" role="navigation">
+		  <ul class="ui-grid-a sz_zhuti">
+			<li><a class="ui-btn-active" href="#" data-role="button" onClick="ChangeDiv('0','Div_',2)" >未开始</a></li>
+			<li><a href="#" data-role="button" onClick="ChangeDiv('1','Div_',2)" >已完成</a></li>
+		  </ul>
+		</div>
+		<template v-if = 'loading'>
+		<div data-role="content" class="sz_star">
+				<div id="Div_0">
+					<div class="ui-grid-solo sz_zuoye">待完成考试：{{exams.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow" onclick="location.href='main.html?{{d.data[i].id}}'" @click='jump($index,0)' v-for = "exam in exams">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{exam.title}}<font class="sz_time">共{{exam.workcount}}题</font></h6>
+									<ul class="sz_ke_ul">
+										<li class="sz_liu"><img src="../../tools/jquerymobile/img/sz_star.png" /><font class="sz_color_a">{{exam.begintime}}</font></li>
+										<li class="sz_si"><img src="../../tools/jquerymobile/img/sz_end.png" /><font class="sz_color_b">{{exam.endtime}}</font></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+					<nomsg msg='暂无待完成考试' v-if='exams.length ===0'></nomsg>
+				</div>
+				<div id="Div_1" style="display:none;">
+					<div class="ui-grid-solo sz_zuoye">已完成考试：{{examFns.length}}</div>
+					<div class="ui-grid-solo sz_bg ui-shadow"  @click='jump($index,1)'  v-for = "examfn in examFns">
+						<div class="sz_jiang">
+							<div class="sz_right">
+								<div class="sz_xiang">
+									<h6>{{examfn.title}}<font class="sz_time">共{{examfn.workcount}}题</font></h6>
+									<ul class="sz_ke_ul">
+										<li class="sz_liu">提交时间：{{examfn.updtime}}</li>
+										<li class="sz_si sz_alrt"><font>{{examfn.points}}分</font></li>
+									</ul>
+								</div>
+							</div>
+							<div class="sz_tou"><img src="/wap/images/sz_ico_work.png"></div>
+						</div>
+					</div>
+				<nomsg msg='暂无待完成考试' v-if='examFns.length ===0'></nomsg>
+			<!--已批改---结束-->
+			</div>
+			</template>
+			<load v-else></load>
+		</div>
+		<!--章节目录、课程介绍、讨论---结束-->
+	</div>
+
+	<script src="../../htmlc/exam/list.js"></script>
+</div>
+
+</body>
+</html>

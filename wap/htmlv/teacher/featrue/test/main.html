@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>课堂测验</title>
+<link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+<link rel="stylesheet" href="/wap/css/main.css" />
+<script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+<script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+<script src="/wap/js/config.js"></script>
+<script src="/wap/tools/vue/vue.js"></script>
+<script src="/wap/js/component.js"></script>
+
+</head>
+<body>
+
+<div data-role="page" class="nPage">
+	<div data-role="main" class="ui-content">
+		<!--我要评论-开始-->
+
+		<div data-role="content" class="sz_star_b">
+			<div class="ui-grid-solo sz_bg ui-shadow sz_martop" v-if="loading">
+				<!--内容-->
+						<div class="sz_bord">{{testmain.stem}}</div>
+						<div class="sz_abcd">
+							<ul class="testoption">
+								<template v-if="testmain.type!=='2'">
+									<li v-for="xuan in testmain.options" class="clear">
+										<label class="optmain" v-bind:for="'test'+$index">
+											{{$index | numChange}}.{{xuan}}
+										</label>
+									</li>
+								</template>
+								<template v-else>
+									<li v-for="xuans in testmain.options" class="clear">
+											<label class="optmain" :for="'test'+$index">
+												{{$index | numChange}}.{{xuans}}
+											</label>
+										</li>
+								</template>
+							</ul>
+						</div>
+						<div class="sz_zishu sz_martop"> <span class="f-left">正确答案：{{testmain.answer}}</span><span class="testType">{{testmain.type | testType}}</span></div>
+						<button data-role="none" class="testsub" v-on:click="testsub">查看答题情况</button>
+
+						<div class="modal-mask modal-transition" v-show="showstudent">
+							<div class="modal-wrapper">
+								<div class="modal-container">
+									<div class="modal-header">
+										<h3 slot="header"></h3>
+									</div>
+									<div class="modal-body">
+										<div slot="body" class="pjia">
+										<div class="pjcontent">
+											<table width="100%">
+												<tr>
+													<td>姓名</td><td>答案</td><td>答题情况</td>
+												</tr>
+												<tr v-for="list in answerlist">
+													<td>{{list.truename}}</td><td>{{list.studentAnswer}}</td><td>{{list.studentAnswer==testmain.answer?"正确":"错误"}}</td>
+												</tr>
+											</table>
+										</div>
+						</div></div><div class="modal-footer">
+							<div slot="footer">
+								<button data-role="none" class="close" v-on:click="showstudent=false">关闭</button>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						</div>
+						</div>
+						</div>
+			</div>
+			<load v-else></load>
+		</div>
+	</div>
+</div>
+<script src="/wap/htmlc/teacher/featrue/test/main.js"></script>
+</body>
+</html>

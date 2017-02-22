@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>课堂评价</title>
+    <link rel="stylesheet" href="/wap/tools/jquerymobile/jquery.mobile-1.4.5.css" />
+    <link rel="stylesheet" href="/wap/css/main.css" />
+    <script src="/wap/tools/jquerymobile/jquery.min.js"></script>
+    <script src="/wap/tools/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script src="/wap/tools/laytpl.js"></script>
+    <script src="/wap/js/config.js"></script>
+</head>
+<body>
+<div data-role="page" class="nPage">
+
+    <div data-role="main" class="ui-content">
+        <div class="listLoad">
+        </div>
+            <ul class="listNormal">
+            </ul>
+    </div>
+    <div class="modal-mask modal-transition" style="display:none">
+      <div class="modal-wrapper">
+        <div class="modal-container">
+          <div class="modal-header">
+            <h3 slot="header"></h3>
+          </div>
+          <div class="modal-body">
+            <div slot="body" class="pjia">
+				<div>星级： <span class="star" style="color:red"></span>
+        <br>
+        评语：
+        <br>
+        <div class="pjcontent">
+
+        </div>
+			</div>
+		</div></div><div class="modal-footer"><div slot="footer">
+				<button data-role="none" class="close">关闭</button>
+				<div style="clear:both"></div>
+			</div></div></div></div></div>
+</div>
+<script>
+$(document).on("pageshow",function(){
+    var h1 =$(window).height()-$('.sz_head').outerHeight()-70;
+    $('.discussMsg').css('height',h1)
+});
+</script>
+<script src="/wap/htmlc/teacher/featrue/rated/list.js"></script>
+</body>
+</html>
